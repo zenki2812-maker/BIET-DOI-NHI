@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173b72">
+<meta name="description" content="Trò chơi tương tác cho học sinh lớp 5: Biệt đội nhí đẩy lùi bạo lực học đường.">
+<title>Biệt đội nhí – Đẩy lùi bạo lực học đường</title>
+<style>
+:root{--navy:#173b72;--blue:#2f68b2;--sky:#eaf4ff;--yellow:#ffcf57;--green:#16845b;--red:#c43e4b;--ink:#18304f;--muted:#64748b;--paper:#fff;--line:#d9e5f2;--shadow:0 12px 32px rgba(23,59,114,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#eaf4ff 0%,#f8fbff 45%,#f2f8ff 100%);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);min-height:100vh}button,input{font:inherit}button{cursor:pointer;touch-action:manipulation}.app{max-width:720px;margin:0 auto;padding:14px 14px 30px}.topline{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:4px 2px 12px;font-size:.8rem;font-weight:800;color:var(--navy)}.pill{background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:999px;white-space:nowrap}.hero{background:linear-gradient(145deg,#173b72,#2d6ab2);color:#fff;border-radius:26px;padding:22px 18px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#ffffff10}.hero:before{width:180px;height:180px;right:-55px;top:-65px}.hero:after{width:95px;height:95px;left:-30px;bottom:-35px}.hero-content{position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:900;color:#ffdf82}.hero h1{font-size:clamp(1.75rem,7vw,2.7rem);line-height:1.08;margin:9px 0 8px;letter-spacing:-.03em}.hero p{margin:0;color:#e4efff;line-height:1.5}.mascots{display:flex;justify-content:center;align-items:center;gap:10px;margin:16px 0 4px}.mascot{width:94px;height:94px;border-radius:26px;background:#ffffff18;border:2px solid #ffffff50;display:grid;place-items:center;font-size:3.5rem;transform:rotate(-4deg)}.mascot:nth-child(2){transform:rotate(4deg);background:#ffcf5730}.section{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 6px 20px #173b720a}.section h2{font-size:1.2rem;margin:0 0 8px}.intro{line-height:1.55;color:#405674}.name-label{display:block;font-weight:800;margin:16px 0 7px}.name-input{width:100%;border:2px solid var(--line);border-radius:14px;padding:13px 14px;color:var(--ink);background:#fbfdff;outline:none}.name-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2f68b220}.btn{border:0;border-radius:15px;padding:14px 17px;font-weight:900;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:transform .12s,filter .12s;min-height:48px}.btn:active{transform:scale(.98)}.btn-primary{background:var(--yellow);color:#3d2c00;box-shadow:0 5px 0 #e3a927}.btn-blue{background:var(--navy);color:white}.btn-soft{background:#eaf3ff;color:var(--navy);border:1px solid #cbdff8}.btn-block{width:100%;margin-top:12px}.small{font-size:.82rem;color:var(--muted);line-height:1.45}.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.rule{background:#f4f8ff;border-radius:14px;padding:11px 8px;text-align:center;font-size:.8rem;line-height:1.35}.rule b{display:block;font-size:1.35rem;margin-bottom:4px}.hidden{display:none!important}.game-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.level-tag{background:#fff0be;color:#725000;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.8rem}.score-tag{background:#e4f8ed;color:#116443;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.85rem}.progress{height:9px;background:#e7eef8;border-radius:99px;overflow:hidden;margin:10px 0 16px}.progress>div{height:100%;background:linear-gradient(90deg,#26a66f,#7ddc98);width:0;transition:width .3s}.scene{background:linear-gradient(140deg,#f1f8ff,#fff);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px}.scene-top{display:flex;align-items:center;gap:12px}.scene-emoji{width:72px;height:72px;border-radius:20px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:2.65rem;flex-shrink:0}.scene h2{margin:0 0 5px;font-size:1.16rem}.scene p{margin:0;color:#50647f;line-height:1.45;font-size:.94rem}.question{font-size:1.15rem;line-height:1.45;font-weight:850;margin:16px 0 12px}.answers{display:grid;gap:9px}.answer{width:100%;text-align:left;border:2px solid var(--line);border-radius:15px;padding:13px;background:#fff;color:var(--ink);display:flex;align-items:flex-start;gap:11px;line-height:1.4;font-weight:650;min-height:54px}.letter{width:28px;height:28px;border-radius:99px;background:#eef4fc;display:grid;place-items:center;flex-shrink:0;font-weight:900;color:var(--navy)}.answer:focus-visible,.btn:focus-visible{outline:3px solid #f2b829;outline-offset:3px}.answer.correct{border-color:#16845b;background:#effbf4}.answer.correct .letter{background:#16845b;color:#fff}.answer.wrong{border-color:#c43e4b;background:#fff2f3}.answer.wrong .letter{background:#c43e4b;color:#fff}.answer:disabled{cursor:default}.feedback{margin-top:13px;border-radius:16px;padding:14px;line-height:1.5}.feedback.good{background:#eaf9f0;border:1px solid #b7e7ca}.feedback.bad{background:#fff4e5;border:1px solid #f1d3a2}.feedback strong{display:block;margin-bottom:4px}.feedback .law{font-size:.82rem;color:#50647f;margin-top:7px}.next-wrap{margin-top:13px}.result-hero{text-align:center;background:linear-gradient(145deg,#173b72,#2d6ab2);color:white;border-radius:24px;padding:24px 16px}.trophy{font-size:4rem}.result-hero h2{margin:6px 0;font-size:1.8rem}.big-score{font-size:2.4rem;font-weight:1000;color:#ffdc73}.result-hero p{color:#e4efff;line-height:1.5}.medal{font-size:1rem;font-weight:900;background:#ffdc73;color:#493700;display:inline-block;border-radius:999px;padding:8px 14px;margin-top:6px}.result-card{background:#f4f8ff;border-radius:16px;padding:14px;margin-top:12px;line-height:1.5}.result-card h3{margin:0 0 6px}.result-card ul{padding-left:20px;margin:6px 0}.commitment{background:#fff8df;border:1px solid #f2df9e;border-radius:18px;padding:15px;margin-top:12px}.commitment label{display:flex;gap:10px;align-items:flex-start;line-height:1.4;margin:10px 0}.commitment input{width:20px;height:20px;accent-color:var(--green);flex-shrink:0}.footer{text-align:center;padding:20px 8px 0;color:#64748b;font-size:.78rem;line-height:1.5}.footer b{color:var(--navy)}.toast{margin-top:10px;font-size:.85rem;color:var(--green);font-weight:800}.badge-list{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:12px 0}.badge-item{border-radius:12px;background:#ffffff1f;padding:8px 10px;font-size:.82rem;font-weight:800}@media(min-width:600px){.app{padding:24px}.hero{padding:28px}.section{padding:22px}.answers{grid-template-columns:1fr 1fr}.answer:last-child:nth-child(odd){grid-column:1/-1}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="topline"><span>🎒 HÀNH TRÌNH TỬ TẾ</span><span class="pill">Dành cho học sinh lớp 5</span></div>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Em làm tuyên truyền viên pháp luật</div>
+      <h1>BIỆT ĐỘI NHÍ<br>ĐẨY LÙI BẠO LỰC!</h1>
+      <p>Giải cứu tình bạn · Chọn cách ứng xử đúng · Lan tỏa điều tử tế</p>
+      <div class="mascots" aria-label="Hai nhân vật học sinh"><div class="mascot">🦸🏻‍♀️</div><div class="mascot">🦸🏻‍♂️</div></div>
+    </div>
+  </header>
+
+  <section id="startScreen" class="section">
+    <h2>🌟 Sẵn sàng nhận nhiệm vụ?</h2>
+    <p class="intro">Trường học đang cần những người bạn dũng cảm và tử tế! Hãy vượt qua 10 thử thách ngẫu nhiên để giúp các bạn được an toàn, tôn trọng và vui vẻ khi đến trường.</p>
+    
+    <div style="background: #f4f8ff; padding: 12px; border-radius: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+      <span>🎵 Bật hiệu ứng âm thanh:</span>
+      <input type="checkbox" id="soundToggle" checked style="width: 20px; height: 20px; accent-color: var(--blue);">
+    </div>
+
+    <label class="name-label" for="playerName">Tên gọi của em (không bắt buộc)</label>
+    <input class="name-input" id="playerName" maxlength="20" placeholder="Ví dụ: Mầm Xanh" autocomplete="off">
+    <div class="rules">
+      <div class="rule"><b>🧭</b>10 câu hỏi<br>ngẫu nhiên</div>
+      <div class="rule"><b>⭐</b>10 điểm<br>mỗi câu đúng</div>
+      <div class="rule"><b>🏆</b>100 điểm<br>tối đa</div>
+    </div>
+    <button class="btn btn-primary btn-block" id="startBtn">Bắt đầu hành trình 🚀</button>
+    <p class="small" style="margin-bottom:0">Trò chơi không gửi tên hay điểm số của em lên máy chủ. Hãy chọn cách xử lý an toàn và nhờ người lớn đáng tin cậy giúp đỡ khi cần.</p>
+  </section>
+
+  <section id="gameScreen" class="section hidden" aria-live="polite">
+    <div class="game-head"><span id="levelTag" class="level-tag">CÂU HỎI 1/10</span><span class="score-tag">⭐ <span id="score">0</span> điểm</span></div>
+    <div class="progress" aria-label="Tiến độ trò chơi"><div id="progressBar"></div></div>
+    <div class="scene">
+      <div class="scene-top"><div id="sceneEmoji" class="scene-emoji">🤝</div><div><h2 id="sceneTitle">Nhiệm vụ</h2><p id="sceneDesc"></p></div></div>
+      <div id="question" class="question"></div>
+    </div>
+    <div id="answers" class="answers"></div>
+    <div id="feedback" class="feedback hidden" role="status"></div>
+    <div class="next-wrap"><button id="nextBtn" class="btn btn-blue btn-block hidden">Tiếp tục nhiệm vụ ➜</button></div>
+  </section>
+
+  <section id="resultScreen" class="hidden">
+    <div class="result-hero">
+      <div class="trophy" id="resultEmoji">🏆</div>
+      <div class="eyebrow">NHIỆM VỤ HOÀN THÀNH</div>
+      <h2 id="resultTitle">Tuyệt vời, chiến binh tử tế!</h2>
+      <div class="big-score"><span id="finalScore">0</span>/100</div>
+      <p id="resultMessage"></p>
+      <div class="medal" id="medal">Huy hiệu Người bạn tử tế</div>
+      <div class="badge-list"><span class="badge-item">🛡️ Biết bảo vệ</span><span class="badge-item">💚 Biết sẻ chia</span><span class="badge-item">📣 Biết lên tiếng</span></div>
+    </div>
+    <div class="result-card"><h3>📚 Ba điều em cần nhớ</h3><ul><li>Không đánh, đe dọa, xúc phạm hoặc hùa theo việc bắt nạt.</li><li>Khi thấy nguy hiểm, giữ an toàn và báo ngay cho thầy cô hoặc người lớn đáng tin cậy.</li><li>Không chia sẻ video, hình ảnh nhằm làm nhục bạn; hãy nhờ người lớn hỗ trợ.</li></ul></div>
+    <div class="commitment">
+      <h3 style="margin:0 0 5px">💚 Cam kết của tuyên truyền viên nhí</h3>
+      <p class="small" style="margin-top:0">Đánh dấu những việc em sẽ thực hiện:</p>
+      <label><input type="checkbox"> Em không bắt nạt, trêu chọc hay cô lập bạn.</label>
+      <label><input type="checkbox"> Em giúp đỡ bạn trong khả năng an toàn của mình.</label>
+      <label><input type="checkbox"> Em báo người lớn khi phát hiện bạo lực học đường.</label>
+      <label><input type="checkbox"> Em không chia sẻ nội dung bắt nạt trên mạng.</label>
+    </div>
+    <button id="replayBtn" class="btn btn-primary btn-block">🔄 Chơi lại từ đầu</button>
+    <button id="shareBtn" class="btn btn-soft btn-block">📤 Chia sẻ trò chơi</button>
+    <button id="copyBtn" class="btn btn-soft btn-block">📋 Sao chép thông điệp tuyên truyền</button>
+    <p id="shareStatus" class="toast hidden" role="status"></p>
+    <p class="small" style="text-align:center;margin:12px 0 0">Điểm số chỉ hiển thị trên thiết bị này, không phải bảng xếp hạng trực tuyến.</p>
+  </section>
+
+  <footer class="footer"><b>VÌ MỘT TRƯỜNG HỌC KHÔNG BẠO LỰC!</b><br>“Em biết – Em hiểu – Em thực hiện”<br>Trò chơi giáo dục kỹ năng ứng xử, không thay thế sự hỗ trợ của thầy cô, gia đình và cơ quan có trách nhiệm.</footer>
+</main>
+<script>
+const questionBank = [
+ {emoji:"👀",title:"Tín hiệu cần chú ý",desc:"Giờ ra chơi, em nhìn thấy một việc khiến bạn buồn.",q:"Hành vi nào dưới đây có thể là bạo lực học đường?",a:["Góp ý nhẹ nhàng khi bạn mắc lỗi","Cố ý đánh, đe dọa hoặc liên tục xúc phạm bạn","Mời bạn cùng tham gia trò chơi"],correct:1,explain:"Đúng rồi! Cố ý gây tổn thương bằng hành vi thể chất hoặc tinh thần có thể là bạo lực học đường. Cần xem xét sự việc cụ thể và tìm người lớn hỗ trợ.",law:"Ghi nhớ: Mọi học sinh đều cần được tôn trọng và bảo vệ."},
+ {emoji:"📱",title:"Tin nhắn không vui",desc:"Một nhóm chat có người đăng lời chế giễu một bạn trong lớp.",q:"Việc nào em không nên làm?",a:["Chụp và phát tán bài đăng để nhiều người cùng cười","Không hùa theo, lưu bằng chứng phù hợp và báo người lớn","Động viên bạn bị tổn thương và hỏi xem bạn có cần giúp đỡ không"],correct:0,explain:"Chính xác! Phát tán nội dung làm nhục có thể khiến tổn thương lan rộng. Đừng bình luận công kích hay chuyển tiếp; hãy báo người lớn và dùng công cụ báo cáo khi phù hợp.",law:"Bắt nạt trên mạng cũng có thể gây tổn hại thật ngoài đời."},
+ {emoji:"🤝",title:"Bạn cần một người đồng hành",desc:"Em thấy một bạn bị chế giễu và bị bỏ lại một mình.",q:"Em có thể làm gì để giúp bạn?",a:["Cười theo để nhóm kia không trêu mình","Bình tĩnh hỏi thăm, không hùa theo và báo thầy cô nếu cần","Ép bạn phải tự đứng lên cãi nhau"],correct:1,explain:"Rất tốt! Em có thể thể hiện sự quan tâm, rủ bạn đến nơi an toàn và báo thầy cô. Không cần đối đầu với nhóm đang bắt nạt nếu điều đó khiến em gặp nguy hiểm.",law:"Giúp đỡ phải đi cùng với bảo đảm an toàn cho chính mình và bạn."},
+ {emoji:"🚨",title:"Tình huống khẩn cấp",desc:"Em thấy một bạn đang bị đánh ở góc sân trường.",q:"Cách xử lý an toàn nhất là gì?",a:["Lao vào can ngăn dù nhóm kia đông và hung hãn","Đứng xem vì không liên quan đến mình","Giữ khoảng cách an toàn, gọi thầy cô hoặc người lớn đến giúp ngay"],correct:2,explain:"Đúng! Hãy nhanh chóng gọi giáo viên, bảo vệ trường hoặc người lớn. Nếu có người bị thương hay nguy hiểm tức thời, cần nhờ người lớn liên hệ dịch vụ khẩn cấp. Không tự đặt mình vào nguy hiểm.",law:"Không im lặng trước bạo lực, nhưng hãy tìm cách hỗ trợ an toàn."},
+ {emoji:"💬",title:"Lời nói có sức mạnh",desc:"Bạn em tức giận vì bị trêu chọc và muốn đánh trả.",q:"Em nên khuyên bạn thế nào?",a:["“Đánh lại đi, như vậy mới không bị bắt nạt!”","“Mình cùng đến gặp thầy cô để tìm cách giải quyết an toàn nhé.”","“Cứ đăng thông tin riêng tư của bạn kia lên mạng đi.”"],correct:1,explain:"Chính xác! Bình tĩnh, tránh trả đũa và nhờ người lớn can thiệp là hướng xử lý an toàn hơn. Mâu thuẫn nên được giải quyết bằng trao đổi phù hợp và sự hỗ trợ cần thiết.",law:"Không dùng bạo lực để giải quyết mâu thuẫn."},
+ {emoji:"📣",title:"Trở thành tuyên truyền viên",desc:"Lớp em muốn cùng xây dựng môi trường học đường thân thiện.",q:"Thông điệp nào đúng nhất?",a:["“Khác biệt là lý do để trêu chọc bạn.”","“Bị bắt nạt thì phải tự chịu, không nên kể với ai.”","“Tôn trọng sự khác biệt, không bắt nạt và báo người lớn khi cần.”"],correct:2,explain:"Tuyệt vời! Mỗi người có thể góp phần xây dựng trường học an toàn bằng cách tôn trọng bạn bè, không cổ vũ bạo lực và tìm sự giúp đỡ khi cần.",law:"Căn cứ tham khảo: Luật Trẻ em năm 2016; Nghị định 80/2017/NĐ-CP về môi trường giáo dục an toàn, lành mạnh, thân thiện và phòng, chống bạo lực học đường."},
+ {emoji:"🏃",title:"Giờ ra chơi an toàn",desc:"Em thấy một nhóm bạn đang cố tình đẩy ngã bạn khác ở hành lang.",q:"Em nên làm gì?",a:["Nhắm mắt làm ngơ cho nhanh","Lại gần nhắc nhở và báo ngay cho thầy cô giám thị","Cổ vũ để xem ai ngã đau hơn"],correct:1,explain:"Chính xác! Hành động đẩy ngã có thể gây chấn thương nặng. Cần ngăn chặn hoặc báo ngay cho giám thị/thầy cô.",law:"Luôn giữ an toàn khu vực công cộng trong trường học."},
+ {emoji:"💻",title:"Bình luận trên mạng",desc:"Em đọc được một bình luận chê bai ngoại hình của bạn học trên trang cá nhân.",q:"Cách ứng xử văn minh là gì?",a:["Hùa vào thả biểu cảm cười cợt","Bỏ qua và không tham gia tương tác tiêu cực, có thể động viên bạn","Nhắn tin hùa theo để vui đùa"],correct:1,explain:"Đúng rồi! Không tham gia vào các hành vi công kích trực tuyến là cách bảo vệ bạn bè tốt nhất.",law:"Quy tắc ứng xử trên mạng xã hội dành cho học sinh."},
+ {emoji:"🎒",title:"Giấu đồ của bạn",desc:"Một bạn trong lớp bị mất cặp sách và đang khóc tìm kiếm.",q:"Em biết có bạn giấu chiếc cặp ra phía sau lớp để trêu.",a:["Đứng nhìn vì không phải việc của mình","Khuyên bạn lấy lại cặp trả cho bạn và cùng giúp bạn tìm","Cùng tham gia giấu đồ cho vui"],correct:1,explain:"Chính xác! Trêu chọc quá đà dẫn đến cất giấu đồ đạc gây hoảng loạn cho bạn là hành vi bắt nạt cần được ngăn chặn.",law:"Tôn trọng tài sản và tinh thần của bạn bè."},
+ {emoji:"🤫",title:"Lời đe dọa",desc:"Một bạn đe dọa sẽ đánh em nếu dám kể chuyện bạn ấy bắt nạt người khác cho cô giáo.",q:"Em nên làm gì trước lời đe dọa này?",a:["Sợ hãi im lặng tuyệt đối","Giữ bình tĩnh, ghi nhớ sự việc và tin tưởng báo ngay cho thầy cô hoặc bố mẹ","Đánh lại để dằn mặt"],correct:1,explain:"Rất đúng! Bạo lực học đường cần được đưa ra ánh sáng. Bố mẹ và thầy cô luôn sẵn sàng bảo vệ em.",law:"Quyền được bảo vệ an toàn theo Luật Trẻ em."},
+ {emoji:"👥",title:"Tẩy chay bạn mới",desc:"Lớp có bạn học sinh mới chuyển đến, ít nói và một số bạn đề xuất không cho ai chơi cùng.",q:"Em sẽ cư xử thế nào?",a:["Đồng ý tẩy chay để không bị cô lập nhóm","Chủ động chào hỏi, rủ bạn cùng tham gia hoạt động lớp","Xa lánh theo số đông"],correct:1,explain:"Chính xác! Việc cô lập, tẩy chay người khác là một dạng bạo lực tinh thần rất tổn thương.",law:"Xây dựng tình bạn đoàn kết, đùm bọc lẫn nhau."},
+ {emoji:"🏷️",title:"Biệt danh ác ý",desc:"Có bạn đặt biệt danh xấu để trêu chọc ngoại hình của một bạn khác khiến bạn đó rất buồn.",q:"Em nên làm gì?",a:["Gọi theo cho vui miệng","Khuyên các bạn dừng lại vì điều đó làm bạn buồn","Cười trừ cho qua chuyện"],correct:1,explain:"Chính xác! Biệt danh mang tính châm chọc, miệt thị ngoại hình là hành vi bạo lực ngôn từ.",law:"Tôn trọng thân thể, danh dự và nhân phẩm của người khác."},
+ {emoji:"✉️",title:"Thư nặc danh",desc:"Em nhặt được một mảnh giấy viết lời lẽ chửi bới, đe dọa bỏ vào ngăn bàn của một bạn.",q:"Em nên xử lý thế nào?",a:["Vứt đi hoặc đưa cho thầy cô giáo xử lý","Xé đi để không ai thấy","Mang đọc to trước lớp"],correct:0,explain:"Đúng vậy! Đưa cho thầy cô xử lý kín đáo sẽ giúp bảo vệ nạn nhân và tìm ra nguyên nhân ngăn chặn kịp thời.",law:"Phát giác và ngăn chặn hành vi bạo lực học đường."},
+ {emoji:"🤝",title:"Gương sáng bạn tốt",desc:"Em thấy một nhóm bạn đứng ra bảo vệ học sinh lớp dưới khi bị đe dọa lấy đồ.",q:"Em suy nghĩ thế nào về hành động đó?",a:["Đó là việc làm dũng cảm, đáng được biểu dương","Là chuyện bao đồng không nên lo","Sợ bị vạ lây nên tránh xa"],correct:0,explain:"Chính xác! Dũng cảm bảo vệ bạn bè yếu thế là phẩm chất tuyệt vời của đội viên, thiếu nhi ngoan.",law:"Tinh thần dũng cảm bảo vệ lẽ phải và bạn bè."}
+];
+
+let activeChallenges = [];
+let current = 0, score = 0, answered = false, player = "";
+const $ = id => document.getElementById(id);
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+  if (!$("soundToggle").checked) return;
+  if (audioCtx.state === 'suspended') { audioCtx.resume(); }
+  
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  
+  const now = audioCtx.currentTime;
+  
+  if (type === 'correct') {
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(523.25, now);
+    osc.frequency.setValueAtTime(659.25, now + 0.1);
+    osc.frequency.setValueAtTime(783.99, now + 0.2);
+    gain.gain.setValueAtTime(0.15, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+    osc.start(now);
+    osc.stop(now + 0.4);
+  } else if (type === 'wrong') {
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(180, now);
+    osc.frequency.setValueAtTime(130, now + 0.15);
+    gain.gain.setValueAtTime(0.15, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+    osc.start(now);
+    osc.stop(now + 0.35);
+  }
+}
+
+function show(id) { $(id).classList.remove("hidden"); }
+function hide(id) { $(id).classList.add("hidden"); }
+
+function shuffleArray(array) {
+  let arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function startGame() {
+  player = $("playerName").value.trim();
+  current = 0;
+  score = 0;
+  answered = false;
+  activeChallenges = shuffleArray(questionBank).slice(0, 10);
+  
+  hide("startScreen");
+  hide("resultScreen");
+  show("gameScreen");
+  renderQuestion();
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function renderQuestion() {
+  const c = activeChallenges[current];
+  answered = false;
+  $("levelTag").textContent = `CÂU HỎI ${current + 1}/10`;
+  $("score").textContent = score;
+  $("progressBar").style.width = (current / activeChallenges.length * 100) + "%";
+  $("sceneEmoji").textContent = c.emoji;
+  $("sceneTitle").textContent = c.title;
+  $("sceneDesc").textContent = c.desc;
+  $("question").textContent = (current + 1) + ". " + c.q;
+  $("answers").innerHTML = "";
+  hide("feedback");
+  hide("nextBtn");
+  
+  c.a.forEach((label, i) => {
+    const b = document.createElement("button");
+    b.className = "answer";
+    b.type = "button";
+    const letter = document.createElement("span");
+    letter.className = "letter";
+    letter.textContent = String.fromCharCode(65 + i);
+    const txt = document.createElement("span");
+    txt.textContent = label;
+    b.append(letter, txt);
+    b.addEventListener("click", () => choose(i));
+    $("answers").appendChild(b);
+  });
+}
+
+function choose(i) {
+  if (answered) return;
+  answered = true;
+  const c = activeChallenges[current];
+  const buttons = [...$("answers").querySelectorAll("button")];
+  
+  buttons.forEach((b, n) => {
+    b.disabled = true;
+    if (n === c.correct) b.classList.add("correct");
+    else if (n === i) b.classList.add("wrong");
+  });
+  
+  const good = (i === c.correct);
+  if (good) {
+    score += 10;
+    playSound('correct');
+  } else {
+    playSound('wrong');
+  }
+  
+  $("score").textContent = score;
+  const f = $("feedback");
+  f.className = "feedback " + (good ? "good" : "bad");
+  f.innerHTML = "";
+  const strong = document.createElement("strong");
+  strong.textContent = good ? "🌟 Chính xác! +10 điểm" : "💡 Mình cùng học từ tình huống này nhé";
+  const p = document.createElement("div");
+  p.textContent = c.explain;
+  const law = document.createElement("div");
+  law.className = "law";
+  law.textContent = c.law;
+  f.append(strong, p, law);
+  show("feedback");
+  $("nextBtn").textContent = current === activeChallenges.length - 1 ? "Xem kết quả 🏆" : "Tiếp tục nhiệm vụ ➜";
+  show("nextBtn");
+}
+
+function next() {
+  if (!answered) return;
+  if (current < activeChallenges.length - 1) {
+    current++;
+    renderQuestion();
+    window.scrollTo({top: 0, behavior: "smooth"});
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  hide("gameScreen");
+  show("resultScreen");
+  $("finalScore").textContent = score;
+  let title, msg, medal, emoji;
+  
+  if (score === 100) {
+    title = "Xuất sắc, " + (player || "chiến binh tử tế") + "!";
+    msg = "Em đã hoàn thành xuất sắc cả 10 thử thách tuyệt đối!";
+    medal = "🏆 Huy hiệu Đại sứ tử tế";
+    emoji = "🏆";
+  } else if (score >= 70) {
+    title = "Làm tốt lắm" + (player ? ", " + player : "") + "!";
+    msg = "Em đã có rất nhiều lựa chọn đúng đắn và an toàn.";
+    medal = "🥇 Huy hiệu Người bạn dũng cảm";
+    emoji = "🌟";
+  } else {
+    title = "Cố gắng thêm nhé" + (player ? ", " + player : "") + "!";
+    msg = "Mỗi thử thách là một cơ hội học hỏi. Hãy chơi lại để nắm vững kỹ năng hơn nhé!";
+    medal = "💚 Huy hiệu Trái tim biết học hỏi";
+    emoji = "💪";
+  }
+  
+  $("resultTitle").textContent = title;
+  $("resultMessage").textContent = msg;
+  $("medal").textContent = medal;
+  $("resultEmoji").textContent = emoji;
+  $("progressBar").style.width = "100%";
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+$("startBtn").addEventListener("click", startGame);
+$("nextBtn").addEventListener("click", next);
+$("replayBtn").addEventListener("click", () => {
+  hide("resultScreen");
+  show("startScreen");
+  $("playerName").value = player;
+  window.scrollTo({top: 0, behavior: "smooth"});
+});
+
+$("shareBtn").addEventListener("click", async () => {
+  const data = {title: "Biệt đội nhí – Đẩy lùi bạo lực học đường", text: "Cùng chơi trò chơi tìm hiểu cách phòng chống bạo lực học đường dành cho học sinh lớp 5!", url: location.href};
+  const status = $("shareStatus");
+  show("shareStatus");
+  try {
+    if (navigator.share) {
+      await navigator.share(data);
+      status.textContent = "Đã mở bảng chia sẻ của thiết bị.";
+    } else {
+      await navigator.clipboard.writeText(data.text + " " + data.url);
+      status.textContent = "Đã sao chép nội dung chia sẻ.";
+    }
+  } catch (e) {
+    status.textContent = "Hãy sao chép đường link trên thanh địa chỉ trình duyệt.";
+  }
+});
+
+$("copyBtn").addEventListener("click", async () => {
+  const text = "VÌ MỘT TRƯỜNG HỌC KHÔNG BẠO LỰC!\nKhông bắt nạt – Không cổ vũ bạo lực – Không im lặng khi bạn cần giúp đỡ.\nTôn trọng sự khác biệt, hỗ trợ an toàn và báo thầy cô hoặc người lớn đáng tin cậy.";
+  const s = $("shareStatus");
+  show("shareStatus");
+  try {
+    await navigator.clipboard.writeText(text);
+    s.textContent = "Đã sao chép thông điệp tuyên truyền!";
+  } catch (e) {
+    s.textContent = text;
+  }
+});
+</script>
+</body>
+</html>
